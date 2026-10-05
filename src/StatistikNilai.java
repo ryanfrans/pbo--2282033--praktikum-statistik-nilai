@@ -32,5 +32,35 @@ public class StatistikNilai {
             System.out.println("Tidak ada nilai.");
             return;
         }
+
+        int jumlah = nilai.size();
+        int total = 0;
+
+        for (int n : nilai) {
+            total += n;
+        }
+
+        double rata = (double) total / jumlah;
+
+        int max = nilai.get(0);
+        int min = nilai.get(0);
+
+        for (int n : nilai) {
+            if (n > max) {
+                max = n;
+            }
+
+            if (n < min) {
+                min = n;
+            }
+        }
+
+        int atasRata = 0;
+
+        for (int n : nilai) {
+            if (n > rata) {
+                atasRata++;
+            }
+        }
     }
 }
